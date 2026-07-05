@@ -1,72 +1,71 @@
 # igvault
 
-**CLI simples, limpo e confiável para baixar Reels públicos do Instagram.**
+**A simple, clean, and reliable CLI for downloading public Instagram Reels.**
 
-Foco exclusivo em Reels públicos. Zero login. Anti-ban forte ativado por padrão.
+Exclusive focus on public Reels. No login required. Strong anti-ban protection enabled by default.
 
 ![Demo](assets/igvault-demo.gif)
 
-*Demo gerada com [VHS](https://github.com/charmbracelet/vhs) do Charmbracelet.*
+*Demo generated with [VHS](https://github.com/charmbracelet/vhs) from Charmbracelet.*
 
-## ✨ Recursos
+## ✨ Features
 
-- Baixa Reels de qualquer perfil público (`@usuario`)
-- Pastas organizadas: `./downloads/@username/reels/`
-- Arquivos `.mp4` válidos e reproduzíveis
-- Delays humanizados (3-9s), headers stealth mobile + browser
-- Rate limiting e cooldown entre perfis
-- `--dry-run` para testar instantaneamente
-- CLI linda com Rich (cores, progresso, painéis)
-- Comandos intuitivos: `reels`, `profile`, `bulk`
+- Download Reels from any public profile (`@username`)
+- Organized output: `./downloads/@username/reels/`
+- Valid and playable `.mp4` files
+- Humanized delays (3-9s) with stealth mobile + browser headers
+- Intelligent rate limiting and cooldowns between profiles
+- `--dry-run` mode for instant testing
+- Beautiful modern CLI powered by Rich (colors, progress bars, panels)
+- Intuitive commands: `reels`, `profile`, `bulk`
 
-## 📦 Instalação
+## 📦 Installation
 
 ```bash
-# 1. Clone ou baixe o projeto
+# 1. Clone or download the project
 cd igvault
 
-# 2. Instale em modo editável (recomendado)
+# 2. Install in editable mode (recommended)
 pip install -e .
 
-# Ou rode diretamente com módulo
+# Or run directly using the module
 python3 -m igvault.cli --help
 ```
 
-## 🚀 Uso
+## 🚀 Usage
 
-### Baixar Reels de um perfil
+### Download Reels from a profile
 
 ```bash
-# Até 10 reels (padrão)
+# Download up to 10 reels (default)
 igvault reels @nasa
 
-# Limitar quantidade
+# Limit the number of reels
 igvault reels @instagram --limit 5
 
-# Alias 'profile'
+# 'profile' alias
 igvault profile nasa --limit 3
 
-# Teste sem baixar nada (recomendado primeiro)
+# Test without actually downloading (recommended first)
 igvault reels @nasa --limit 5 --dry-run
 ```
 
-### Bulk (vários perfis)
+### Bulk mode (multiple profiles)
 
-Crie um arquivo `perfis.txt`:
+Create a `profiles.txt` file:
 
 ```
 nasa
 instagram
-# comentários são ignorados
-nasa
+# comments are ignored
 ```
 
 ```bash
-igvault bulk perfis.txt --limit 4
-igvault bulk perfis.txt --limit 4 --dry-run
+igvault bulk profiles.txt --limit 4
+igvault bulk profiles.txt --limit 4 --dry-run
 ```
 
-### Ajuda
+### Help
 
 ```bash
 igvault --help
@@ -74,7 +73,7 @@ igvault reels --help
 igvault bulk --help
 ```
 
-## 📁 Estrutura de saída
+## 📁 Output Structure
 
 ```
 downloads/
@@ -85,29 +84,29 @@ downloads/
         └── ...
 ```
 
-## 🛡️ Anti-ban (sempre ativo)
+## 🛡️ Anti-ban (always active)
 
-- Delays aleatórios entre 3 e 9.5 segundos
-- User-Agents mobile realistas + headers completos
-- Cooldown de 10-18s entre diferentes perfis no bulk
-- Sem cookies/login — só conteúdo público
-- Follow redirects + timeouts seguros
+- Random human-like delays between 3 and 9.5 seconds
+- Realistic mobile User-Agents + complete browser-like headers
+- 10-18s cooldown between different profiles in bulk operations
+- No cookies or login — public content only
+- Proper redirect following and safe timeouts
 
-## ✅ Requisitos
+## ✅ Requirements
 
 - Python 3.10+
 - httpx, rich, typer
 
-Instalação automática via `pip install -e .`
+Installed automatically with `pip install -e .`
 
-## ⚠️ Avisos importantes
+## ⚠️ Important Notes
 
-- Apenas perfis **públicos**
-- Use com responsabilidade
-- Instagram pode mudar a qualquer momento (o projeto usa métodos web públicos)
-- Para uso pesado considere proxies ou intervalos maiores
+- Only works with **public** profiles
+- Use responsibly
+- Instagram may change their web interface at any time (this project uses public methods)
+- For heavy usage, consider using proxies or longer intervals
 
-## 🧪 Teste rápido (macOS)
+## 🧪 Quick Test (macOS)
 
 ```bash
 pip install -e .
@@ -115,8 +114,8 @@ igvault reels @instagram --limit 2 --dry-run
 igvault reels @nasa --limit 1
 ```
 
-Os arquivos salvos devem abrir normalmente no QuickTime / VLC.
+Downloaded files should play normally in QuickTime, VLC, or any media player.
 
 ---
 
-Feito para ser simples, robusto e funcionar de primeira.
+Built to be simple, robust, and work out of the box.

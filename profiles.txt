@@ -1,0 +1,5 @@
+# Example profiles file for igvault bulk
+# One username per line. Lines starting with # are ignored.
+
+nasa
+instagram

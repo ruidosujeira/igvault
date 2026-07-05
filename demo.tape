@@ -43,7 +43,7 @@ Type "clear"
 Enter
 Sleep 200ms
 
-Type "igvault bulk perfis.txt --limit 2 --dry-run"
+Type "igvault bulk profiles.txt --limit 2 --dry-run"
 Enter
 Sleep 3.2s
 
