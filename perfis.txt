@@ -1,0 +1,5 @@
+# Exemplo de arquivo para igvault bulk
+# Um username por linha. Linhas com # são ignoradas.
+
+nasa
+instagram
